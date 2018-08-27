@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template1</title>
+</head>
+
+<body>
+    <main></main>
+    <template id="template1">
+      <section>
+          <h1>Diana</h1>
+          <h2>Coffee</h2>
+          <p>Paragraph</p>
+      </section>   
+     </template>
+    <script>
+        const hobies = ["Books", "Fishing", "Running", "Talking"];
+
+        hobies.forEach(hobie => {
+            const temp1 = document.querySelector("#template1").content;
+            const parent = document.querySelector("main");
+            const clone1 = temp1.cloneNode(true);
+            clone1.querySelector("h1").textContent = hobie;
+            clone1.querySelector("p").textContent = "Text is here forever";
+            parent.appendChild(clone1);
+            
+            })
+            
+            const coffee = ["Coffee", "Milk", "Water", "Sugar"];
+
+        hobies.forEach(coffee => {
+            const temp1 = document.querySelector("#template1").content;
+            const parent = document.querySelector("main");
+            const clone1 = temp1.cloneNode(true);
+            clone1.querySelector("h2").textContent = coffee;
+            clone1.querySelector("p").textContent = "Img and Text";
+            parent.appendChild(clone1);
+        })
+    </script>
+</body>
+</html>

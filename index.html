@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates</title>
+</head>
+
+<body>
+    <main></main>
+    <template id="myTemp">
+        <section>
+            <h2>Header</h2>
+            <p>Paragraph</p>
+        </section>    
+    </template>
+    <script>
+        const people = ["Herman", "Jens", "Jonas", "Alan"];
+
+        people.forEach(person => {
+            const temp1 = document.querySelector("#myTemp").content;
+            const parent = document.querySelector("main");
+            const clone1 = temp1.cloneNode(true);
+            clone1.querySelector("h2").textContent = person;
+            clone1.querySelector("p").textContent = "New text goes here...";
+            parent.appendChild(clone1);
+        })
+    </script>
+</body>
+</html>
